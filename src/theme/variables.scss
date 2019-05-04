@@ -1,0 +1,54 @@
+// --------------------------------------------------
+$font-path: "../assets/fonts";
+@import "ionic.globals";
+// --------------------------------------------------
+// --------------------------------------------------
+$colors: ( primary: #387ef5, secondary: #32db64, danger: #f53d3d, light: #ccc, dark: #222, blue: #387ef5, black:#000, white:#fff, darkGrey: #ddd);
+$textColors:(darkGrey: #333);
+$otherColors:(lightGrey:#eee, transparent:rgba(0, 0, 0, 0));
+$orangePackage:(lightBg:#fbf9f8, lightTxt:#928a87, darkBg:#e48562, darkTxt:#fff);
+$bluePackage:(bg:#fcfcfc, lightTxt:#928a87, darkTxt:#444, blue:#6a90fc);
+// --------------------------------------------------
+$toolbar-background:color($colors, black);
+$toolbar-text-color :color($colors, white);
+// --------------------------------------------------
+$tabs-ios-tab-icon-color:color($colors, darkGrey);
+$tabs-ios-tab-icon-color-active:color($colors, white);
+$tabs-ios-tab-text-color:color($colors, darkGrey);
+$tabs-ios-tab-text-color-active:color($colors, white);
+// --------------------------------------------------
+$tabs-wp-tab-icon-color:color($colors, darkGrey);
+$tabs-wp-tab-icon-color-active:color($colors, white);
+$tabs-wp-tab-text-color:color($colors, darkGrey);
+$tabs-wp-tab-text-color-active:color($colors, white);
+// --------------------------------------------------
+$tabs-md-tab-icon-color:color($colors, darkGrey);
+$tabs-md-tab-icon-color-active:color($colors, white);
+$tabs-md-tab-text-color:color($colors, darkGrey);
+$tabs-md-tab-text-color-active:color($colors, white);
+// --------------------------------------------------
+$tabs-ios-tab-min-height:35px;
+// --------------------------------------------------
+.tabbar {
+  background-color: color($colors, black)!important;
+  font-weight: 900!important;
+}
+
+// $tabs-ios-tab-font-size:20px;
+// $tabs-ios-tab-icon-size:20px;
+// --------------------------------------------------
+// --------------------------------------------------
+@import "ionic.theme.default"; // Ionicons
+// --------------------------------------------------
+@import "ionic.ionicons"; // Fonts
+@import "roboto";
+@import "noto-sans";
+@font-face {
+  font-family: '冬青黑体';
+  src: url('../assets/font/冬青黑体.ttf')
+}
+
+@font-face {
+  font-family: 'Digit';
+  src: url('../assets/font/digit.ttf')
+}

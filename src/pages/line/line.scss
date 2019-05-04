@@ -1,0 +1,80 @@
+page-line {
+  $panelHeight: 120px;
+  ion-header {
+    ion-title {
+      padding-left: 5rem!important;
+      padding-right: 0!important;
+    }
+  }
+  ion-content {
+    #mapContainer {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      a {
+        display: none;
+      }
+    }
+    #infoContainer {
+      z-index: -999;
+      position: absolute;
+    }
+    #stations {
+      bottom: 0;
+      height: $panelHeight;
+      width: 100%;
+      position: absolute;
+      .station {
+        width: 80%!important;
+        height: 90%;
+        margin-left: 10%;
+        margin-right: 10%;
+        border-radius: 3px;
+        background-color: color($colors, white);
+        .stationWrapper {
+          height: $panelHeight*0.9;
+          .left {
+            float: left;
+          }
+          .right {
+            float: right;
+          }
+          .header {
+            padding-top: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            text-align: left;
+            font-weight: bold;
+            color: color($colors, black);
+            .stationName {
+              margin-left: 5px;
+            }
+            .likeBtn {
+              font-size: 2.5rem;
+              color: color($colors, black);
+            }
+          }
+          hr {
+            clear: both;
+          }
+          .content {
+            padding: 10px;
+            font-weight: bold;
+            clear: both;
+            .major {
+              height: 2rem;
+              font-size: 1.5rem;
+              color: color($bluePackage, darkTxt);
+            }
+            .minor {
+              height: 2rem;
+              clear: both;
+              font-size: 1rem;
+              color: color($bluePackage, lightTxt);
+            }
+          }
+        }
+      }
+    }
+  }
+}

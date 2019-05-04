@@ -1,0 +1,63 @@
+<ion-header id="home-header">
+  <div id="searchBtnContainer">
+    <h1 id="label">{{label}}</h1>
+    <button ion-button round id="searchBtn" (click)="onTapSearchBtn($event)">
+        <ion-icon name="md-search"></ion-icon>{{placeholder}}
+    </button>
+  </div>
+</ion-header>
+<ion-content #content overflow-scroll="false">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="{{pullingText}}" refreshingSpinner="circles" refreshingText="{{refreshingText}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list id="favourites">
+    <ion-item *ngFor="let fav of favourites;let i = index;" class="fav" [@scrolling]="scrollingState">
+      <div class="header">
+        <div class="left">
+          <span class="timer">{{timer.getTime(i)}}</span>
+        </div>
+        <div class="center">
+          <div class="line">
+            <ion-icon name="ios-pin-outline" class="icon"></ion-icon>
+            <div class="info">
+              <span class="first">STOP NAME:</span>
+              <span class="second">{{fav.stationName}}</span>
+            </div>
+          </div>
+          <div class="line">
+            <ion-icon name="ios-card-outline" class="icon"></ion-icon>
+            <div class="info">
+              <span class="first">LINO NO.:</span>
+              <span class="second">{{fav.busName}}</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="right" (click)="onTapArrow(i)">
+          <img class="arrow" src="assets/icon/arrow-right.png" [@arrowState]="activeStation===i?'active':'inactive'">
+        </div>
+      </div>
+      <div class="content" [@contentState]="activeStation===i?'active':'inactive'">
+        <div class="iconBar">
+          <ion-icon name="ios-trash-outline" (click)="onTapDeleteBtn(fav.busName, fav.stationName, fav.stopid)"></ion-icon>
+          <ion-icon name="md-arrow-up" (click)="onTapUpBtn(i)"></ion-icon>
+          <ion-icon name="ios-share-outline" (click)="onTapStickBtn(i)"></ion-icon>
+        </div>
+        <div class="ads">广告位出租 / 捐赠去广告</div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<div id="stickStation" #stickStation [@stickState]="stickState" (pan)="onDragStick($event)">
+  <button id="btnClose" (click)="onTapCloseStickBtn()">
+    <img src="assets/icon/close.png">
+  </button>
+  <div id="timeWrapper">
+    <div id="time">{{timer.getTime(stickTimeIndex)}}</div>
+  </div>
+  <div id="infoWrapper">
+    <span class="info">{{stickBusNo}}</span>
+    <span class="info">{{stickStationName}}</span>
+  </div>
+</div>

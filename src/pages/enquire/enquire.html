@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{Resources.ENQUIRE_TAB_NAME}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card id="nearby">
+    <img src="assets/img/map.jpg">
+    <ion-item>
+      <span item-left>{{Resources.DISTANCE_FROM_ME}}</span>
+      <ion-select item-left [(ngModel)]="radius" cancelText="{{Resources.CANCEL}}" okText="{{Resources.CONFIRM}}">
+        <ion-option value="{{select}}" selected="true" *ngFor="let select of availableRadius">{{select}}</ion-option>
+      </ion-select>
+      <span item-left>{{Resources.METER}}</span>
+      <button id="searchNearby" (click)="onTapSearchNearby()" ion-button icon-left clear item-right>
+        <ion-icon name="navigate"></ion-icon>
+        {{Resources.ENQUIRE_BTN}}
+      </button>
+    </ion-item>
+  </ion-card>

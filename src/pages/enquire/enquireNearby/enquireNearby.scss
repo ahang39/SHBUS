@@ -1,0 +1,41 @@
+page-enquireNearby {
+  $mapHeight: 350px;
+  ion-content {
+    height: 100%;
+    overflow: hidden;
+    #mapContainer {
+      height: $mapHeight;
+      width: 100%;
+      a {
+        display: none!important;
+      }
+    }
+    #result {
+      height: calc(100% - #{$mapHeight});
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-y: scroll;
+      background-color: color($orangePackage, lightBg);
+      ion-item {
+        background-color: color($orangePackage, lightBg);
+        .title,
+        .content {
+          color: color($orangePackage, lightTxt);
+        }
+      }
+      ion-item:active,
+      ion-item.active {
+        background-color: color($orangePackage, darkBg);
+        .title,
+        .content {
+          color: color($orangePackage, darkTxt);
+        }
+      }
+    }
+    #refresher {
+      right: 0;
+      top: $mapHeight - $fab-mini-size - $fab-content-margin*2;
+    }
+  }
+}

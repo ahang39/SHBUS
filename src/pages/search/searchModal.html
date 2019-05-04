@@ -1,0 +1,22 @@
+<ion-header id="searchModalHeader">
+  <div id="searchBarContainer">
+    <ion-searchbar
+      #searchBar
+      [(ngModel)]="param" 
+      [placeholder]="placeholder" 
+      [showCancelButton]=false
+      [animated]=true 
+      (ionInput)="onInput($event)" 
+      (ionCancel)="onCancel($event)"
+      (ionBlur)="onBlur($event)">
+    </ion-searchbar>
+    <div id="cancelBtn" (click)="onTapCancelBtn($event)">{{cancelButtonText}}</div>
+  </div>
+</ion-header>
+<ion-content id="searchModalContent">
+  <ion-list inset id="result">
+    <button ion-item *ngFor="let line of busList" (click)="onTapListItem(line)">
+    {{line.busLine.name}}
+  </button>
+  </ion-list>
+</ion-content>

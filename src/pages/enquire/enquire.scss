@@ -1,0 +1,18 @@
+page-enquire {
+  ion-content {
+    .scroll-content {
+      overflow: hidden!important;
+      background-image: url('../assets/img/boarding.png');
+      background-size: 100% auto;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+    }
+    #nearby {
+      #searchNearby {
+        font-size: 2rem;
+        color: color($colors, black);
+      }
+    }
+  }
+}

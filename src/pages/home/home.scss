@@ -1,0 +1,194 @@
+page-home {
+  #home-header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: color($colors, black);
+    #searchBtnContainer {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 0.2rem;
+      padding-right: 1rem;
+      padding-bottom: 0.2rem;
+      padding-left: 1rem;
+      #label {
+        width: 5rem;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        color: color($colors, white);
+        line-height: 3rem;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      #searchBtn {
+        width: 80%;
+        height: 3rem;
+        margin: 0;
+        padding: 0;
+        color: color($textColors, darkGrey)!important;
+        background-color: color($colors, white)!important;
+        ion-icon {
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+  ion-content {
+    #favourites {
+      background-color: color($colors, black);
+      ion-item {
+        transition: 0.2s;
+        padding: 0!important;
+        margin: 0!important;
+        * {
+          padding: 0!important;
+          margin: 0!important;
+        }
+        .header {
+          height: 10rem;
+          .left {
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            .timer {
+              font-family: "Digit";
+              font-size: 7rem;
+              font-weight: 900;
+            }
+          }
+          .center {
+            display: inline-block;
+            width: 30%;
+            .line {
+              .icon {
+                display: inline-block;
+                font-size: 3rem;
+                width: 25%;
+                text-align: center;
+                font-weight: bold;
+              }
+              .info {
+                display: inline-block;
+                width: 80%;
+                span {
+                  display: block;
+                }
+                .first {
+                  color: black;
+                  font-size: 1rem;
+                  line-height: 0.8rem;
+                  font-weight: 900;
+                }
+                .second {
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+          .right {
+            width: 10%;
+            display: inline-block;
+            .arrow {
+              height: 2rem;
+              width: 2rem;
+              display: block;
+              margin-top: 2rem!important;
+              margin-right: 1rem!important;
+              margin-bottom: 2rem!important;
+              margin-left: 1rem!important;
+              transition: 0.5s!important;
+            }
+          }
+        }
+        .content {
+          height: 15rem;
+          transition: 0.5s;
+          background-color: color($colors, black);
+          color: color($colors, white);
+          .iconBar {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 3rem!important;
+            margin-left: auto!important;
+            margin-right: auto!important;
+            ion-icon {
+              font-size: 3rem;
+              font-weight: bold;
+              color: color($colors, light);
+              display: inline-block;
+            }
+          }
+          .ads{
+            width: 100%;
+            margin-top: 2rem!important;
+            text-align: center;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+  #stickStation {
+    top: 7rem;
+    left: 15%;
+    width: 70%;
+    height: 30%;
+    z-index: 999;
+    position: fixed;
+    transition: 0.1s;
+    padding-top: 0.5rem;
+    color: color($colors, white);
+    background-color: color($colors, black);
+    #btnClose {
+      $btnRadius: 1.5rem;
+      width: 2* $btnRadius;
+      height: 2*$btnRadius;
+      top: -0.8*$btnRadius;
+      right: -0.8*$btnRadius;
+      font-size: 2*$btnRadius;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      position: absolute;
+      border-radius: 100%;
+      border: 3px solid color($colors, black);
+      background-color: color($colors, white);
+      img {
+        width: 50%;
+        height: 50%;
+      }
+    }
+    #btnClose:active {
+      background-color: color($colors, darkGrey);
+    }
+    #timeWrapper {
+      width: 70%;
+      height: 70%;
+      left: 15%;
+      top: -20%;
+      position: absolute;
+      font-weight: 900;
+      color: color($colors, black);
+      background-color: color($colors, white);
+      border: 5px solid color($colors, black);
+      #time {
+        font-size: 5rem;
+        text-align: center;
+      }
+    }
+    #infoWrapper {
+      width: 100%;
+      bottom: 2rem;
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      .info {
+        font-size: 2rem;
+        text-align: center;
+        display: inline-block;
+      }
+    }
+  }
+}

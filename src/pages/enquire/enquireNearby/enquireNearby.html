@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{Resources.ENQUIRE_NEARBY_PAGE_TITLE}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div #container id="mapContainer"></div>
+  <ion-list #result id="result">
+    <ion-item [class.active]="result.active" 
+              *ngFor="let result of searchResultsList" 
+              (click)="onTapListItem(result,$event)">
+      <h2 class="title">{{result.title}}</h2>
+      <h3 class="content">{{result.address}}</h3>
+    </ion-item>
+  </ion-list>
+  <ion-fab id="refresher">
+    <button mini ion-fab color="black" (click)="onTapResfresher($event)">
+      <ion-icon name="refresh"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

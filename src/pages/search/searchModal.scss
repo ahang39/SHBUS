@@ -1,0 +1,41 @@
+#searchModalHeader {
+  background-color: color($colors, black);
+  #searchBarContainer {
+    display: flex;
+    align-content: space-between;
+    padding-top: 0.4rem;
+    padding-right: 1rem;
+    padding-bottom: 0.4rem;
+    padding-left: 1rem;
+    border-color: color($otherColors, transparent);
+    ion-searchbar {
+      height: 3rem;
+      margin: 0;
+      padding: 0;
+      border-color: color($otherColors, transparent)!important;
+      background-color: color($otherColors, transparent)!important;
+      .searchbar-input {
+        background-color: color($otherColors, lightGrey);
+        border-radius: 100px!important;
+      }
+    }
+    #cancelBtn {
+      width: 5rem;
+      height: 100%;
+      padding: 0;
+      margin: 0.3rem;
+      color: color($colors, white);
+      line-height: 3rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+#searchModalContent {
+  background-image: url('../assets/img/station.png');
+  background-size: 100% auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}

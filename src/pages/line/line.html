@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{busLine.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div #map id="mapContainer"></div>
+  <div *ngIf="stationList.success">
+    <ion-slides id="stations" #stations (ionSlideDidChange)="setCurrentStation($event.getActiveIndex(),true)">
+      <ion-slide class="station" *ngFor="let station of stationList.stations;let i = index;">
+        <div class="stationWrapper">
+
+          <div class="header">
+            <ion-icon name="bus"></ion-icon><span class="stationName">{{station.title}}</span>
+            <ion-icon class="iconfont likeBtn right {{isFavourite(station)?'icon-star':'icon-star-outline'}}" (click)="onTapStarBtn(busNo, station.title, i)"></ion-icon>
+          </div>
+
+          <div class="content">
+            <div class="major">
+              <span class="left">{{station.timerText}}</span>
+              <span class="right">{{station.stopRemainText}}</span>
+            </div>
+            <div class="minor">
+              <span class="left">{{station.terminal}}</span>
+              <span class="right">{{station.distanceText}}</span>
+            </div>
+          </div>
+
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+</ion-content>
